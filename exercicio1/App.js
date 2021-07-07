@@ -1,10 +1,8 @@
 import React from 'react';
 import {View, StyleSheet, StatusBar} from 'react-native';
 
-
 const App = () => {
   return (
-
     <>
     <StatusBar hidden/>
     <View style={styles.container}>
@@ -39,17 +37,6 @@ const App = () => {
       </View>
 
       <View style={styles.footer}></View>
-      {/* <View style={styles.container}>
-        <View style={styles.box}></View>
-        <View style={styles.box}></View>
-        <View style={styles.box}></View>
-      </View>
-
-      <View style={styles.container}>
-        <View style={styles.box}></View>
-        <View style={styles.box}></View>
-        <View style={styles.box}></View>
-      </View>  */}
 
     </View>
     </>
@@ -64,17 +51,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   container3: {
-    flex: 1,
+    marginTop: 50,
     alignItems: "center",
-    justifyContent: "space-around",
   },
   container4: {
-    flex: 1,
+    marginTop: 50,
     flexDirection: "row",
     alignItems: "center",
   },
   container5: {
     flex: 1,
+    justifyContent: "space-around",
   },
   row: {
     flexDirection: "row",
@@ -92,6 +79,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5A623',
   },
   rectangleBox: {
+    marginTop: 50,
     width: "35%",
     height: 30,
     backgroundColor: '#F5A623',
