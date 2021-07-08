@@ -1,111 +1,80 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
+
 import {
-  SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
+  Image,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import Location from 'react-native-vector-icons/Entypo';
+import Mail from 'react-native-vector-icons/Feather';
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
+    <>
+    <StatusBar hidden/>
+    <View style={styles.container}>
+
+      <Image style={styles.imagem} source={require('./chill.jpg')}></Image>
+
+      <Text style={styles.profileName}>@guxmedeiros</Text>
+
+      <Text style={styles.aboutMe}>About me:</Text>
+
+      <Text style={styles.textAbout}>22 years old, computer science student, aspiring front-end developer and mechanical keyboards lover. </Text>
+
+      <Text style={styles.city}>
+        <Location name="location-pin" size={30} color="white" />
+         Teresopolis, RJ
       </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
+
+      <Text style={styles.city}>
+        <Mail name="mail" size={30} color="white" />
+        gustavommoyses@gmail.com
       </Text>
+      
     </View>
-  );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+    </>
+  )
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    backgroundColor: "#222",
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  imagem: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    marginTop: 50,
+    alignSelf: "center",
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  profileName: {
+    marginTop: 25,
+    fontSize: 30,
+    alignSelf: "center",
+    color: "#fff",
+    fontWeight: "700",
   },
-  highlight: {
-    fontWeight: '700',
+  aboutMe: {
+    marginTop: 75,
+    color: "#fff",
+    textAlign: "center",
+    fontSize: 20,
+  },
+  textAbout: {
+    marginTop: 10,
+    color: "#fff",
+    textAlign: "center",
+  },
+  city: {
+    marginTop: 50,
+    color: "#fff",
+    fontSize: 16,
   },
 });
 
